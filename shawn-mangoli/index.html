@@ -31,7 +31,10 @@ main{padding:22px 20px 60px}
 .badge{font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;white-space:nowrap;color:#fff} .badge-ok{background:var(--ok)} .badge-uc{background:var(--uc)} .badge-na{background:var(--na)}
 .metrics{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px 14px;margin:14px 0 10px}
 .m{border-top:2px solid var(--line);padding-top:6px} .m .k{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600} .m .v{display:block;font-size:16px;font-weight:700;color:var(--ink)}
-.note{margin:8px 0;font-size:13px;color:var(--uc);font-weight:600} .meta{font-size:12px;color:var(--muted);margin:6px 0 12px}
+.note{margin:8px 0;font-size:13px;color:var(--uc);font-weight:600}
+.pend{margin:4px 0 0;font-size:13px;color:var(--muted);font-style:italic}
+.sec{max-width:1180px;margin:10px auto 14px} .sec h2{font-size:20px;margin:0 0 4px;color:var(--navy)} .sec p{margin:0;color:var(--muted);font-size:14px} .sec.hide{display:none}
+#sec-pend{margin-top:30px;padding-top:18px;border-top:2px solid var(--gold)} .meta{font-size:12px;color:var(--muted);margin:6px 0 12px}
 .btns{display:flex;gap:10px;flex-wrap:wrap} .btn{display:inline-block;padding:10px 16px;border-radius:8px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;font-size:14px}
 .btn-gold{background:var(--gold);color:var(--navy)} .btn-line{background:#fff;color:var(--navy);border:2px solid var(--navy);padding:8px 14px}
 footer{background:var(--navy2);color:#c9d3de;padding:28px 20px;font-size:13px} footer a{color:var(--gold)} footer .team{color:#fff;font-weight:700}
@@ -42,37 +45,20 @@ footer{background:var(--navy2);color:#c9d3de;padding:28px 20px;font-size:13px} f
 <body>
 <header><div class="wrap">
   <div class="brand"><div><div class="t">The LAAA Team &middot; Marcus &amp; Millichap</div><h1>On-Market: Westside 10+ Unit Apartments at a 5% Cap or Better</h1>
-  <p class="lead">Every 10+ unit multifamily listing currently on the market from Santa Monica and Venice to West LA, Culver City, Beverly Hills and West Hollywood, priced under $11M at a 5% cap or better, with an LAAA setup sheet for each deal, sorted by published cap rate, highest first. Survey date September 17, 2026.</p><p class="prep">Prepared for Shawn Mangoli by Filip Niculete, The LAAA Team</p></div>
+  <p class="lead">Every 10+ unit multifamily listing currently on the market from Santa Monica and Venice to West LA, Culver City, Beverly Hills and West Hollywood, priced under $11M at a published cap of 5% or better, sorted by published cap rate, highest first. Deals where we hold the offering memorandum carry our LAAA underwriting and a setup sheet. For the rest, only the listing broker's published figures are shown until we receive the OM. Survey date September 17, 2026.</p><p class="prep">Prepared for Shawn Mangoli by Filip Niculete, The LAAA Team</p></div>
   </div>
-  <div class="stats"><div><b>24</b>listings</div><div><b>380</b>units</div><div><b>$116M</b>total asking</div><div><b>23</b>available</div><div><b>1</b>under contract</div></div>
+  <div class="stats"><div><b>22</b>listings</div><div><b>349</b>units</div><div><b>$108M</b>total asking</div><div><b>21</b>available</div><div><b>1</b>under contract</div></div>
 </div></header>
 <div id="map"></div>
 <div class="toolbar"><label>Submarket</label><select id="fsub"><option value="">All submarkets</option><option value="Culver City">Culver City</option><option value="Mar Vista">Mar Vista</option><option value="Palms">Palms</option><option value="Pico-Robertson / Beverlywood">Pico-Robertson / Beverlywood</option><option value="Santa Monica">Santa Monica</option><option value="Venice">Venice</option><option value="West Hollywood">West Hollywood</option><option value="West LA / Rancho Park">West LA / Rancho Park</option><option value="West LA / Sawtelle">West LA / Sawtelle</option></select>
   <label>Status</label><select id="fstat"><option value="">All</option><option>Available</option><option>Unpriced</option><option>Under contract</option></select>
   <span class="count" id="count"></span></div>
-<main>
-<section class="deal" id="deal-1" data-sub="Santa Monica" data-status="Available">
-  <div class="photo"><img src="../images/01.jpg" alt="1129 Lincoln Blvd" loading="lazy"></div>
-  <div class="body">
-    <div class="head">
-      <div><div class="num">#01</div><h2>1129 Lincoln Blvd</h2><div class="sub">Santa Monica, CA 90403 &middot; Santa Monica</div></div>
-      <span class="badge badge-ok">Available</span>
-    </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">10</span></div><div class="m"><span class="k">Asking price</span><span class="v">$3,100,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$310,000</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$420.23</span></div><div class="m"><span class="k">Published cap</span><span class="v">6.32%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">11.16x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.65%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$7,352</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$9,819</span></div><div class="m"><span class="k">Year built</span><span class="v">1956</span></div><div class="m"><span class="k">Building SF</span><span class="v">7,377</span></div><div class="m"><span class="k">Lot SF</span><span class="v">7,405</span></div></div>
-    
-    <div class="meta">Listing broker: Stephen Lampe &middot; On market since 3/9/2026 &middot; Rent basis: LoopNet published avg rent by unit type</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/01-1129-lincoln-blvd.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/01-1129-lincoln-blvd.pdf" target="_blank">Setup PDF</a>
-    </div>
-  </div>
-</section>
-<section class="deal" id="deal-2" data-sub="Venice" data-status="Available">
+<main><div class="sec" id="sec-om"><h2>Offering memorandum on file: LAAA underwritten</h2><p>9 deals. We hold the listing broker&#39;s OM, applied our underwriting benchmarks, and built a setup sheet for each.</p></div>
+<section class="deal" id="deal-1" data-sub="Venice" data-status="Available">
   <div class="photo"><img src="../images/02.jpg" alt="2001 Penmar Ave" loading="lazy"></div>
   <div class="body">
     <div class="head">
-      <div><div class="num">#02</div><h2>2001 Penmar Ave</h2><div class="sub">Venice, CA 90291 &middot; Venice</div></div>
+      <div><div class="num">#01</div><h2>2001 Penmar Ave</h2><div class="sub">Venice, CA 90291 &middot; Venice</div></div>
       <span class="badge badge-ok">Available</span>
     </div>
     <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">14</span></div><div class="m"><span class="k">Asking price</span><span class="v">$5,095,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$363,929</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$534.52</span></div><div class="m"><span class="k">Published cap</span><span class="v">6.20%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">11.34x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.63%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$8,566</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$10,636</span></div><div class="m"><span class="k">Year built</span><span class="v">1962</span></div><div class="m"><span class="k">Building SF</span><span class="v">9,532</span></div><div class="m"><span class="k">Lot SF</span><span class="v">10,019</span></div></div>
@@ -85,96 +71,11 @@ footer{background:var(--navy2);color:#c9d3de;padding:28px 20px;font-size:13px} f
     </div>
   </div>
 </section>
-<section class="deal" id="deal-3" data-sub="Santa Monica" data-status="Available">
-  <div class="photo"><img src="../images/03.jpg" alt="947-953 11th St (Voss Apartments)" loading="lazy"></div>
-  <div class="body">
-    <div class="head">
-      <div><div class="num">#03</div><h2>947-953 11th St (Voss Apartments)</h2><div class="sub">Santa Monica, CA 90403 &middot; Santa Monica</div></div>
-      <span class="badge badge-ok">Available</span>
-    </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">15</span></div><div class="m"><span class="k">Asking price</span><span class="v">$8,500,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$566,667</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$717.30</span></div><div class="m"><span class="k">Published cap</span><span class="v">6.04%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">13.77x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">4.67%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$5,691</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$13,453</span></div><div class="m"><span class="k">Year built</span><span class="v">1937</span></div><div class="m"><span class="k">Building SF</span><span class="v">11,850</span></div><div class="m"><span class="k">Lot SF</span><span class="v">14,810</span></div></div>
-    <p class="note">80% occupied per LoopNet</p>
-    <div class="meta">Listing broker: Eli Appel &middot; On market since 9/4/2026 &middot; Rent basis: Allocated from published GRM (price / GRM) using LAAA bed weights</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/03-947-953-11th-st.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/03-947-953-11th-st.pdf" target="_blank">Setup PDF</a>
-    </div>
-  </div>
-</section>
-<section class="deal" id="deal-4" data-sub="West LA / Sawtelle" data-status="Available">
-  <div class="photo"><img src="../images/04.jpg" alt="1811 Parnell Ave" loading="lazy"></div>
-  <div class="body">
-    <div class="head">
-      <div><div class="num">#04</div><h2>1811 Parnell Ave</h2><div class="sub">Los Angeles, CA 90025 &middot; West LA / Sawtelle</div></div>
-      <span class="badge badge-ok">Available</span>
-    </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">11</span></div><div class="m"><span class="k">Asking price</span><span class="v">$2,650,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$240,909</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$401.76</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.98%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">10.30x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.82%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$8,281</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$8,592</span></div><div class="m"><span class="k">Year built</span><span class="v">1971</span></div><div class="m"><span class="k">Building SF</span><span class="v">6,596</span></div><div class="m"><span class="k">Lot SF</span><span class="v">6,534</span></div></div>
-    
-    <div class="meta">Listing broker: Francyne Lambert, Carl Lambert &middot; On market since 8/21/2026 &middot; Rent basis: LoopNet published avg rent by unit type</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/04-1811-parnell-ave.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/04-1811-parnell-ave.pdf" target="_blank">Setup PDF</a>
-    </div>
-  </div>
-</section>
-<section class="deal" id="deal-5" data-sub="West LA / Rancho Park" data-status="Available">
-  <div class="photo"><img src="../images/05.jpg" alt="2619 S Sepulveda Blvd" loading="lazy"></div>
-  <div class="body">
-    <div class="head">
-      <div><div class="num">#05</div><h2>2619 S Sepulveda Blvd</h2><div class="sub">Los Angeles, CA 90064 &middot; West LA / Rancho Park</div></div>
-      <span class="badge badge-ok">Available</span>
-    </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">29</span></div><div class="m"><span class="k">Asking price</span><span class="v">$5,575,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$192,241</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$291.64</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.92%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">10.51x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.17%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$6,362</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$7,799</span></div><div class="m"><span class="k">Year built</span><span class="v">1974</span></div><div class="m"><span class="k">Building SF</span><span class="v">19,116</span></div><div class="m"><span class="k">Lot SF</span><span class="v">20,038</span></div></div>
-    <p class="note">$325K reduction</p>
-    <div class="meta">Listing broker: Jonathan Taksa &middot; On market since 5/27/2026 &middot; Rent basis: Allocated from published GRM (price / GRM) using LAAA bed weights</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/05-2619-s-sepulveda-blvd.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/05-2619-s-sepulveda-blvd.pdf" target="_blank">Setup PDF</a>
-    </div>
-  </div>
-</section>
-<section class="deal" id="deal-6" data-sub="Palms" data-status="Available">
-  <div class="photo"><img src="../images/06.jpg" alt="2015-2021 Chariton St" loading="lazy"></div>
-  <div class="body">
-    <div class="head">
-      <div><div class="num">#06</div><h2>2015-2021 Chariton St</h2><div class="sub">Los Angeles, CA 90034 &middot; Palms</div></div>
-      <span class="badge badge-ok">Available</span>
-    </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">12</span></div><div class="m"><span class="k">Asking price</span><span class="v">$3,375,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$281,250</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$266.17</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.80%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">10.29x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.46%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$10,200</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$9,674</span></div><div class="m"><span class="k">Year built</span><span class="v">1961</span></div><div class="m"><span class="k">Building SF</span><span class="v">12,680</span></div><div class="m"><span class="k">Lot SF</span><span class="v">12,632</span></div></div>
-    <p class="note">Two adjacent parcels; 10 of 12 are 3-bed</p>
-    <div class="meta">Listing broker: Raymond A. Rodriguez IV, Matt Freedman &middot; On market since 6/17/2026 &middot; Rent basis: LoopNet published avg rent by unit type</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/06-2015-2021-chariton-st.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/06-2015-2021-chariton-st.pdf" target="_blank">Setup PDF</a>
-    </div>
-  </div>
-</section>
-<section class="deal" id="deal-7" data-sub="West LA / Rancho Park" data-status="Available">
-  <div class="photo"><img src="../images/07.jpg" alt="11825 National Blvd" loading="lazy"></div>
-  <div class="body">
-    <div class="head">
-      <div><div class="num">#07</div><h2>11825 National Blvd</h2><div class="sub">Los Angeles, CA 90064 &middot; West LA / Rancho Park</div></div>
-      <span class="badge badge-ok">Available</span>
-    </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">13</span></div><div class="m"><span class="k">Asking price</span><span class="v">$4,595,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$353,462</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$388.39</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.71%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">11.21x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.62%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$10,402</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$10,708</span></div><div class="m"><span class="k">Year built</span><span class="v">1971</span></div><div class="m"><span class="k">Building SF</span><span class="v">11,831</span></div><div class="m"><span class="k">Lot SF</span><span class="v">10,019</span></div></div>
-    <p class="note">Reduced</p>
-    <div class="meta">Listing broker: Jonathan Taksa &middot; On market since 8/24/2026 &middot; Rent basis: Allocated from published GRM (price / GRM) using LAAA bed weights</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/07-11825-national-blvd.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/07-11825-national-blvd.pdf" target="_blank">Setup PDF</a>
-    </div>
-  </div>
-</section>
-<section class="deal" id="deal-8" data-sub="West LA / Sawtelle" data-status="Available">
+<section class="deal" id="deal-2" data-sub="West LA / Sawtelle" data-status="Available">
   <div class="photo"><img src="../images/08.jpg" alt="1811 S Bentley Ave (Brazilia Apts)" loading="lazy"></div>
   <div class="body">
     <div class="head">
-      <div><div class="num">#08</div><h2>1811 S Bentley Ave (Brazilia Apts)</h2><div class="sub">Los Angeles, CA 90025 &middot; West LA / Sawtelle</div></div>
+      <div><div class="num">#02</div><h2>1811 S Bentley Ave (Brazilia Apts)</h2><div class="sub">Los Angeles, CA 90025 &middot; West LA / Sawtelle</div></div>
       <span class="badge badge-ok">Available</span>
     </div>
     <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">15</span></div><div class="m"><span class="k">Asking price</span><span class="v">$6,350,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$423,333</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$383.27</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.66%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">11.23x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.79%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$12,605</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$12,075</span></div><div class="m"><span class="k">Year built</span><span class="v">0</span></div><div class="m"><span class="k">Building SF</span><span class="v">16,568</span></div><div class="m"><span class="k">Lot SF</span><span class="v">11,761</span></div></div>
@@ -187,28 +88,11 @@ footer{background:var(--navy2);color:#c9d3de;padding:28px 20px;font-size:13px} f
     </div>
   </div>
 </section>
-<section class="deal" id="deal-9" data-sub="Palms" data-status="Available">
-  <div class="photo"><img src="../images/09.jpg" alt="3602 Keystone Ave" loading="lazy"></div>
-  <div class="body">
-    <div class="head">
-      <div><div class="num">#09</div><h2>3602 Keystone Ave</h2><div class="sub">Los Angeles, CA 90034 &middot; Palms</div></div>
-      <span class="badge badge-ok">Available</span>
-    </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">10</span></div><div class="m"><span class="k">Asking price</span><span class="v">$2,675,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$267,500</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$380.40</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.61%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">11.19x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">6.51%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$8,181</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$9,230</span></div><div class="m"><span class="k">Year built</span><span class="v">1967</span></div><div class="m"><span class="k">Building SF</span><span class="v">7,032</span></div><div class="m"><span class="k">Lot SF</span><span class="v">7,405</span></div></div>
-    <p class="note">80% occupied</p>
-    <div class="meta">Listing broker: Peter James, Will James &middot; On market since 8/13/2026 &middot; Rent basis: LoopNet published avg rent by unit type</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/09-3602-keystone-ave.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/09-3602-keystone-ave.pdf" target="_blank">Setup PDF</a>
-    </div>
-  </div>
-</section>
-<section class="deal" id="deal-10" data-sub="Santa Monica" data-status="Available">
+<section class="deal" id="deal-3" data-sub="Santa Monica" data-status="Available">
   <div class="photo"><img src="../images/10.jpg" alt="2626 Cloverfield Blvd" loading="lazy"></div>
   <div class="body">
     <div class="head">
-      <div><div class="num">#10</div><h2>2626 Cloverfield Blvd</h2><div class="sub">Santa Monica, CA 90405 &middot; Santa Monica</div></div>
+      <div><div class="num">#03</div><h2>2626 Cloverfield Blvd</h2><div class="sub">Santa Monica, CA 90405 &middot; Santa Monica</div></div>
       <span class="badge badge-ok">Available</span>
     </div>
     <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">12</span></div><div class="m"><span class="k">Asking price</span><span class="v">$4,750,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$395,833</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$652.47</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.59%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">12.76x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">4.87%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$7,964</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$10,813</span></div><div class="m"><span class="k">Year built</span><span class="v">0</span></div><div class="m"><span class="k">Building SF</span><span class="v">7,280</span></div><div class="m"><span class="k">Lot SF</span><span class="v">6,098</span></div></div>
@@ -221,11 +105,11 @@ footer{background:var(--navy2);color:#c9d3de;padding:28px 20px;font-size:13px} f
     </div>
   </div>
 </section>
-<section class="deal" id="deal-11" data-sub="Santa Monica" data-status="Available">
+<section class="deal" id="deal-4" data-sub="Santa Monica" data-status="Available">
   <div class="photo"><img src="../images/11.jpg" alt="440 Raymond Ave" loading="lazy"></div>
   <div class="body">
     <div class="head">
-      <div><div class="num">#11</div><h2>440 Raymond Ave</h2><div class="sub">Santa Monica, CA 90405 &middot; Santa Monica</div></div>
+      <div><div class="num">#04</div><h2>440 Raymond Ave</h2><div class="sub">Santa Monica, CA 90405 &middot; Santa Monica</div></div>
       <span class="badge badge-ok">Available</span>
     </div>
     <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">20</span></div><div class="m"><span class="k">Asking price</span><span class="v">$7,750,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$387,500</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$489.89</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.57%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">12.15x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.11%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$9,339</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$11,154</span></div><div class="m"><span class="k">Year built</span><span class="v">1969</span></div><div class="m"><span class="k">Building SF</span><span class="v">15,820</span></div><div class="m"><span class="k">Lot SF</span><span class="v">13,939</span></div></div>
@@ -238,11 +122,11 @@ footer{background:var(--navy2);color:#c9d3de;padding:28px 20px;font-size:13px} f
     </div>
   </div>
 </section>
-<section class="deal" id="deal-12" data-sub="West Hollywood" data-status="Available">
+<section class="deal" id="deal-5" data-sub="West Hollywood" data-status="Available">
   <div class="photo"><img src="../images/12.jpg" alt="1429 Havenhurst Dr" loading="lazy"></div>
   <div class="body">
     <div class="head">
-      <div><div class="num">#12</div><h2>1429 Havenhurst Dr</h2><div class="sub">West Hollywood, CA 90046 &middot; West Hollywood</div></div>
+      <div><div class="num">#05</div><h2>1429 Havenhurst Dr</h2><div class="sub">West Hollywood, CA 90046 &middot; West Hollywood</div></div>
       <span class="badge badge-ok">Available</span>
     </div>
     <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">18</span></div><div class="m"><span class="k">Asking price</span><span class="v">$4,800,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$266,667</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$347.22</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.56%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">13.60x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">3.81%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$4,193</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$8,869</span></div><div class="m"><span class="k">Year built</span><span class="v">1949</span></div><div class="m"><span class="k">Building SF</span><span class="v">13,824</span></div><div class="m"><span class="k">Lot SF</span><span class="v">15,246</span></div></div>
@@ -255,11 +139,11 @@ footer{background:var(--navy2);color:#c9d3de;padding:28px 20px;font-size:13px} f
     </div>
   </div>
 </section>
-<section class="deal" id="deal-13" data-sub="West LA / Sawtelle" data-status="Available">
+<section class="deal" id="deal-6" data-sub="West LA / Sawtelle" data-status="Available">
   <div class="photo"><img src="../images/13.jpg" alt="1524 Granville Ave" loading="lazy"></div>
   <div class="body">
     <div class="head">
-      <div><div class="num">#13</div><h2>1524 Granville Ave</h2><div class="sub">Los Angeles, CA 90025 &middot; West LA / Sawtelle</div></div>
+      <div><div class="num">#06</div><h2>1524 Granville Ave</h2><div class="sub">Los Angeles, CA 90025 &middot; West LA / Sawtelle</div></div>
       <span class="badge badge-ok">Available</span>
     </div>
     <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">10</span></div><div class="m"><span class="k">Asking price</span><span class="v">$5,250,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$525,000</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$367.18</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.54%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">11.87x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.51%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$13,817</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$13,987</span></div><div class="m"><span class="k">Year built</span><span class="v">1988</span></div><div class="m"><span class="k">Building SF</span><span class="v">14,298</span></div><div class="m"><span class="k">Lot SF</span><span class="v">6,970</span></div></div>
@@ -272,11 +156,11 @@ footer{background:var(--navy2);color:#c9d3de;padding:28px 20px;font-size:13px} f
     </div>
   </div>
 </section>
-<section class="deal" id="deal-14" data-sub="Pico-Robertson / Beverlywood" data-status="Under contract">
+<section class="deal" id="deal-7" data-sub="Pico-Robertson / Beverlywood" data-status="Under contract">
   <div class="photo"><img src="../images/14.jpg" alt="1041 S Corning St" loading="lazy"></div>
   <div class="body">
     <div class="head">
-      <div><div class="num">#14</div><h2>1041 S Corning St</h2><div class="sub">Los Angeles, CA 90035 &middot; Pico-Robertson / Beverlywood</div></div>
+      <div><div class="num">#07</div><h2>1041 S Corning St</h2><div class="sub">Los Angeles, CA 90035 &middot; Pico-Robertson / Beverlywood</div></div>
       <span class="badge badge-uc">Under contract</span>
     </div>
     <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">15</span></div><div class="m"><span class="k">Asking price</span><span class="v">$4,700,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$313,333</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$289.52</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.50%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">10.48x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.97%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$11,768</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$10,299</span></div><div class="m"><span class="k">Year built</span><span class="v">1962</span></div><div class="m"><span class="k">Building SF</span><span class="v">16,234</span></div><div class="m"><span class="k">Lot SF</span><span class="v">12,197</span></div></div>
@@ -289,45 +173,11 @@ footer{background:var(--navy2);color:#c9d3de;padding:28px 20px;font-size:13px} f
     </div>
   </div>
 </section>
-<section class="deal" id="deal-15" data-sub="Venice" data-status="Available">
-  <div class="photo"><img src="../images/15.jpg" alt="20 Brooks Ave" loading="lazy"></div>
-  <div class="body">
-    <div class="head">
-      <div><div class="num">#15</div><h2>20 Brooks Ave</h2><div class="sub">Venice, CA 90291 &middot; Venice</div></div>
-      <span class="badge badge-ok">Available</span>
-    </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">18</span></div><div class="m"><span class="k">Asking price</span><span class="v">$5,600,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$311,111</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$482.09</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.48%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">9.12x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">7.41%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$16,041</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$10,039</span></div><div class="m"><span class="k">Year built</span><span class="v">1909</span></div><div class="m"><span class="k">Building SF</span><span class="v">11,616</span></div><div class="m"><span class="k">Lot SF</span><span class="v">6,098</span></div></div>
-    <p class="note">GRM 9.12 published</p>
-    <div class="meta">Listing broker: Kitty Wallace &middot; On market since 8/27/2025 &middot; Rent basis: Allocated from published GRM (price / GRM) using LAAA bed weights</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/15-20-brooks-ave.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/15-20-brooks-ave.pdf" target="_blank">Setup PDF</a>
-    </div>
-  </div>
-</section>
-<section class="deal" id="deal-16" data-sub="Culver City" data-status="Available">
-  <div class="photo"><img src="../images/16.jpg" alt="3827 Tilden Ave (The Tilden)" loading="lazy"></div>
-  <div class="body">
-    <div class="head">
-      <div><div class="num">#16</div><h2>3827 Tilden Ave (The Tilden)</h2><div class="sub">Culver City, CA 90232 &middot; Culver City</div></div>
-      <span class="badge badge-ok">Available</span>
-    </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">10</span></div><div class="m"><span class="k">Asking price</span><span class="v">$3,450,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$345,000</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$369.38</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.42%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">-</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">6.07%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">-</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$10,601</span></div><div class="m"><span class="k">Year built</span><span class="v">1957</span></div><div class="m"><span class="k">Building SF</span><span class="v">9,340</span></div><div class="m"><span class="k">Lot SF</span><span class="v">10,890</span></div></div>
-    <p class="note">Part of a portfolio sale; GRM not published, rents estimated</p>
-    <div class="meta">Listing broker: Adam Peterson, Andrew Long &middot; On market since 2/9/2026 &middot; Rent basis: ESTIMATED (no rents, GRM or cap published)</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/16-3827-tilden-ave.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/16-3827-tilden-ave.pdf" target="_blank">Setup PDF</a>
-    </div>
-  </div>
-</section>
-<section class="deal" id="deal-17" data-sub="West Hollywood" data-status="Available">
+<section class="deal" id="deal-8" data-sub="West Hollywood" data-status="Available">
   <div class="photo"><img src="../images/17.jpg" alt="900 N Orange Grove Ave" loading="lazy"></div>
   <div class="body">
     <div class="head">
-      <div><div class="num">#17</div><h2>900 N Orange Grove Ave</h2><div class="sub">West Hollywood, CA 90046 &middot; West Hollywood</div></div>
+      <div><div class="num">#08</div><h2>900 N Orange Grove Ave</h2><div class="sub">West Hollywood, CA 90046 &middot; West Hollywood</div></div>
       <span class="badge badge-ok">Available</span>
     </div>
     <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">20</span></div><div class="m"><span class="k">Asking price</span><span class="v">$4,150,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$207,500</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$285.11</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.32%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">10.38x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.42%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$8,352</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$8,137</span></div><div class="m"><span class="k">Year built</span><span class="v">1957</span></div><div class="m"><span class="k">Building SF</span><span class="v">14,556</span></div><div class="m"><span class="k">Lot SF</span><span class="v">12,632</span></div></div>
@@ -340,79 +190,11 @@ footer{background:var(--navy2);color:#c9d3de;padding:28px 20px;font-size:13px} f
     </div>
   </div>
 </section>
-<section class="deal" id="deal-18" data-sub="Mar Vista" data-status="Available">
-  <div class="photo"><img src="../images/18.jpg" alt="11401 Washington Pl" loading="lazy"></div>
-  <div class="body">
-    <div class="head">
-      <div><div class="num">#18</div><h2>11401 Washington Pl</h2><div class="sub">Los Angeles, CA 90066 &middot; Mar Vista</div></div>
-      <span class="badge badge-ok">Available</span>
-    </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">10</span></div><div class="m"><span class="k">Asking price</span><span class="v">$2,795,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$279,500</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$392.06</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.30%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">12.30x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">4.60%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$7,228</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$9,158</span></div><div class="m"><span class="k">Year built</span><span class="v">1954</span></div><div class="m"><span class="k">Building SF</span><span class="v">7,129</span></div><div class="m"><span class="k">Lot SF</span><span class="v">7,841</span></div></div>
-    
-    <div class="meta">Listing broker: Jonathan Nikfarjam, Allen Gholian &middot; On market since 6/24/2026 &middot; Rent basis: LoopNet published avg rent by unit type</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/18-11401-washington-pl.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/18-11401-washington-pl.pdf" target="_blank">Setup PDF</a>
-    </div>
-  </div>
-</section>
-<section class="deal" id="deal-19" data-sub="West Hollywood" data-status="Available">
-  <div class="photo"><img src="../images/19.jpg" alt="7526 Fountain Ave" loading="lazy"></div>
-  <div class="body">
-    <div class="head">
-      <div><div class="num">#19</div><h2>7526 Fountain Ave</h2><div class="sub">West Hollywood, CA 90046 &middot; West Hollywood</div></div>
-      <span class="badge badge-ok">Available</span>
-    </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">10</span></div><div class="m"><span class="k">Asking price</span><span class="v">$2,400,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$240,000</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$309.80</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.29%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">11.44x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">3.00%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$7,654</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$8,384</span></div><div class="m"><span class="k">Year built</span><span class="v">1955</span></div><div class="m"><span class="k">Building SF</span><span class="v">7,747</span></div><div class="m"><span class="k">Lot SF</span><span class="v">7,405</span></div></div>
-    
-    <div class="meta">Listing broker: Mike Hanassab, Steven Goldstein &middot; On market since 9/1/2026 &middot; Rent basis: LoopNet published avg rent by unit type</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/19-7526-fountain-ave.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/19-7526-fountain-ave.pdf" target="_blank">Setup PDF</a>
-    </div>
-  </div>
-</section>
-<section class="deal" id="deal-20" data-sub="Santa Monica" data-status="Available">
-  <div class="photo"><img src="../images/20.jpg" alt="1942 Euclid St" loading="lazy"></div>
-  <div class="body">
-    <div class="head">
-      <div><div class="num">#20</div><h2>1942 Euclid St</h2><div class="sub">Santa Monica, CA 90404 &middot; Santa Monica</div></div>
-      <span class="badge badge-ok">Available</span>
-    </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">15</span></div><div class="m"><span class="k">Asking price</span><span class="v">$3,475,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$231,667</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$393.90</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.16%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">12.17x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">4.38%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$6,511</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$8,326</span></div><div class="m"><span class="k">Year built</span><span class="v">1962</span></div><div class="m"><span class="k">Building SF</span><span class="v">8,822</span></div><div class="m"><span class="k">Lot SF</span><span class="v">7,405</span></div></div>
-    
-    <div class="meta">Listing broker: Kitty Wallace &middot; On market since 8/29/2025 &middot; Rent basis: Allocated from published GRM (price / GRM) using LAAA bed weights</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/20-1942-euclid-st.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/20-1942-euclid-st.pdf" target="_blank">Setup PDF</a>
-    </div>
-  </div>
-</section>
-<section class="deal" id="deal-21" data-sub="Palms" data-status="Available">
-  <div class="photo"><img src="../images/21.jpg" alt="3575-3595 S Sepulveda Blvd" loading="lazy"></div>
-  <div class="body">
-    <div class="head">
-      <div><div class="num">#21</div><h2>3575-3595 S Sepulveda Blvd</h2><div class="sub">Los Angeles, CA 90034 &middot; Palms</div></div>
-      <span class="badge badge-ok">Available</span>
-    </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">42</span></div><div class="m"><span class="k">Asking price</span><span class="v">$8,995,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$214,167</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$359.08</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.09%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">10.50x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.45%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$8,884</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$8,113</span></div><div class="m"><span class="k">Year built</span><span class="v">1948</span></div><div class="m"><span class="k">Building SF</span><span class="v">25,050</span></div><div class="m"><span class="k">Lot SF</span><span class="v">29,185</span></div></div>
-    <p class="note">Two separate APNs, TOC Tier 2</p>
-    <div class="meta">Listing broker: Dannie Cavanaugh &middot; On market since 4/13/2026 &middot; Rent basis: Allocated from published GRM (price / GRM) using LAAA bed weights</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/21-3575-3595-s-sepulveda-blvd.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/21-3575-3595-s-sepulveda-blvd.pdf" target="_blank">Setup PDF</a>
-    </div>
-  </div>
-</section>
-<section class="deal" id="deal-22" data-sub="Santa Monica" data-status="Available">
+<section class="deal" id="deal-9" data-sub="Santa Monica" data-status="Available">
   <div class="photo"><img src="../images/22.jpg" alt="222-228 Idaho Ave" loading="lazy"></div>
   <div class="body">
     <div class="head">
-      <div><div class="num">#22</div><h2>222-228 Idaho Ave</h2><div class="sub">Santa Monica, CA 90403 &middot; Santa Monica</div></div>
+      <div><div class="num">#09</div><h2>222-228 Idaho Ave</h2><div class="sub">Santa Monica, CA 90403 &middot; Santa Monica</div></div>
       <span class="badge badge-ok">Available</span>
     </div>
     <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">20</span></div><div class="m"><span class="k">Asking price</span><span class="v">$7,795,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$389,750</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$519.46</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.07%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">12.34x</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.06%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">$10,876</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$10,914</span></div><div class="m"><span class="k">Year built</span><span class="v">1954</span></div><div class="m"><span class="k">Building SF</span><span class="v">15,006</span></div><div class="m"><span class="k">Lot SF</span><span class="v">14,810</span></div></div>
@@ -424,39 +206,174 @@ footer{background:var(--navy2);color:#c9d3de;padding:28px 20px;font-size:13px} f
       <a class="btn btn-line" href="../files/22-222-228-idaho-ave.pdf" target="_blank">Setup PDF</a>
     </div>
   </div>
-</section>
-<section class="deal" id="deal-23" data-sub="Venice" data-status="Available">
-  <div class="photo"><img src="../images/33.jpg" alt="120 Westminster Ave" loading="lazy"></div>
+</section><div class="sec" id="sec-pend"><h2>Offering memorandum pending: published figures only</h2><p>13 deals. No LAAA underwriting yet. Cap rate, GRM and pricing are exactly as published by the listing broker and are unverified.</p></div>
+<section class="deal" id="deal-10" data-sub="Santa Monica" data-status="Available">
+  <div class="photo"><img src="../images/01.jpg" alt="1129 Lincoln Blvd" loading="lazy"></div>
   <div class="body">
     <div class="head">
-      <div><div class="num">#23</div><h2>120 Westminster Ave</h2><div class="sub">Venice, CA 90291 &middot; Venice</div></div>
+      <div><div class="num">#10</div><h2>1129 Lincoln Blvd</h2><div class="sub">Santa Monica, CA 90403 &middot; Santa Monica</div></div>
       <span class="badge badge-ok">Available</span>
     </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">21</span></div><div class="m"><span class="k">Asking price</span><span class="v">$4,300,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$204,762</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$560.33</span></div><div class="m"><span class="k">Published cap</span><span class="v">-</span></div><div class="m"><span class="k">Published GRM</span><span class="v">-</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">7.98%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">-</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$7,992</span></div><div class="m"><span class="k">Year built</span><span class="v">1920</span></div><div class="m"><span class="k">Building SF</span><span class="v">7,674</span></div><div class="m"><span class="k">Lot SF</span><span class="v">5,227</span></div></div>
-    <p class="note">No cap/GRM published; rents estimated</p>
-    <div class="meta">Listing broker: Kitty Wallace &middot; On market since 9/24/2025 &middot; Rent basis: ESTIMATED (no rents, GRM or cap published)</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/33-120-westminster-ave.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/33-120-westminster-ave.pdf" target="_blank">Setup PDF</a>
-    </div>
+    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">10</span></div><div class="m"><span class="k">Asking price</span><span class="v">$3,100,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$310,000</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$420.23</span></div><div class="m"><span class="k">Published cap</span><span class="v">6.32%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">11.16x</span></div><div class="m"><span class="k">Year built</span><span class="v">1956</span></div><div class="m"><span class="k">Building SF</span><span class="v">7,377</span></div><div class="m"><span class="k">Lot SF</span><span class="v">7,405</span></div></div>
+    
+    <div class="meta">Listing broker: Stephen Lampe &middot; On market since 3/9/2026</div>
+    <p class="pend">Offering memorandum requested. LAAA underwriting and setup sheet to follow once it is received; figures above are the listing broker&#39;s as published.</p>
   </div>
 </section>
-<section class="deal" id="deal-24" data-sub="West Hollywood" data-status="Available">
-  <div class="photo"><img src="../images/38.jpg" alt="7550 Fountain Ave" loading="lazy"></div>
+<section class="deal" id="deal-11" data-sub="Santa Monica" data-status="Available">
+  <div class="photo"><img src="../images/03.jpg" alt="947-953 11th St (Voss Apartments)" loading="lazy"></div>
   <div class="body">
     <div class="head">
-      <div><div class="num">#24</div><h2>7550 Fountain Ave</h2><div class="sub">West Hollywood, CA 90046 &middot; West Hollywood</div></div>
+      <div><div class="num">#11</div><h2>947-953 11th St (Voss Apartments)</h2><div class="sub">Santa Monica, CA 90403 &middot; Santa Monica</div></div>
       <span class="badge badge-ok">Available</span>
     </div>
-    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">10</span></div><div class="m"><span class="k">Asking price</span><span class="v">$3,795,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$379,500</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$401.84</span></div><div class="m"><span class="k">Published cap</span><span class="v">-</span></div><div class="m"><span class="k">Published GRM</span><span class="v">-</span></div><div class="m"><span class="k">LAAA adjusted cap</span><span class="v">5.44%</span></div><div class="m"><span class="k">OM expenses / unit</span><span class="v">-</span></div><div class="m"><span class="k">LAAA expenses / unit</span><span class="v">$11,031</span></div><div class="m"><span class="k">Year built</span><span class="v">1958</span></div><div class="m"><span class="k">Building SF</span><span class="v">9,444</span></div><div class="m"><span class="k">Lot SF</span><span class="v">6,970</span></div></div>
-    <p class="note">No cap/GRM published; rents estimated</p>
-    <div class="meta">Listing broker: Yar Meshkaty &middot; On market since 2/18/2026 &middot; Rent basis: ESTIMATED (no rents, GRM or cap published)</div>
-    <div class="btns">
-      
-      <a class="btn" href="../files/38-7550-fountain-ave.xlsx" download>Setup sheet (Excel)</a>
-      <a class="btn btn-line" href="../files/38-7550-fountain-ave.pdf" target="_blank">Setup PDF</a>
+    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">15</span></div><div class="m"><span class="k">Asking price</span><span class="v">$8,500,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$566,667</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$717.30</span></div><div class="m"><span class="k">Published cap</span><span class="v">6.04%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">13.77x</span></div><div class="m"><span class="k">Year built</span><span class="v">1937</span></div><div class="m"><span class="k">Building SF</span><span class="v">11,850</span></div><div class="m"><span class="k">Lot SF</span><span class="v">14,810</span></div></div>
+    <p class="note">80% occupied per LoopNet</p>
+    <div class="meta">Listing broker: Eli Appel &middot; On market since 9/4/2026</div>
+    <p class="pend">Offering memorandum requested. LAAA underwriting and setup sheet to follow once it is received; figures above are the listing broker&#39;s as published.</p>
+  </div>
+</section>
+<section class="deal" id="deal-12" data-sub="West LA / Sawtelle" data-status="Available">
+  <div class="photo"><img src="../images/04.jpg" alt="1811 Parnell Ave" loading="lazy"></div>
+  <div class="body">
+    <div class="head">
+      <div><div class="num">#12</div><h2>1811 Parnell Ave</h2><div class="sub">Los Angeles, CA 90025 &middot; West LA / Sawtelle</div></div>
+      <span class="badge badge-ok">Available</span>
     </div>
+    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">11</span></div><div class="m"><span class="k">Asking price</span><span class="v">$2,650,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$240,909</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$401.76</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.98%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">10.30x</span></div><div class="m"><span class="k">Year built</span><span class="v">1971</span></div><div class="m"><span class="k">Building SF</span><span class="v">6,596</span></div><div class="m"><span class="k">Lot SF</span><span class="v">6,534</span></div></div>
+    
+    <div class="meta">Listing broker: Francyne Lambert, Carl Lambert &middot; On market since 8/21/2026</div>
+    <p class="pend">Offering memorandum requested. LAAA underwriting and setup sheet to follow once it is received; figures above are the listing broker&#39;s as published.</p>
+  </div>
+</section>
+<section class="deal" id="deal-13" data-sub="West LA / Rancho Park" data-status="Available">
+  <div class="photo"><img src="../images/05.jpg" alt="2619 S Sepulveda Blvd" loading="lazy"></div>
+  <div class="body">
+    <div class="head">
+      <div><div class="num">#13</div><h2>2619 S Sepulveda Blvd</h2><div class="sub">Los Angeles, CA 90064 &middot; West LA / Rancho Park</div></div>
+      <span class="badge badge-ok">Available</span>
+    </div>
+    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">29</span></div><div class="m"><span class="k">Asking price</span><span class="v">$5,575,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$192,241</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$291.64</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.92%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">10.51x</span></div><div class="m"><span class="k">Year built</span><span class="v">1974</span></div><div class="m"><span class="k">Building SF</span><span class="v">19,116</span></div><div class="m"><span class="k">Lot SF</span><span class="v">20,038</span></div></div>
+    <p class="note">$325K reduction</p>
+    <div class="meta">Listing broker: Jonathan Taksa &middot; On market since 5/27/2026</div>
+    <p class="pend">Offering memorandum requested. LAAA underwriting and setup sheet to follow once it is received; figures above are the listing broker&#39;s as published.</p>
+  </div>
+</section>
+<section class="deal" id="deal-14" data-sub="Palms" data-status="Available">
+  <div class="photo"><img src="../images/06.jpg" alt="2015-2021 Chariton St" loading="lazy"></div>
+  <div class="body">
+    <div class="head">
+      <div><div class="num">#14</div><h2>2015-2021 Chariton St</h2><div class="sub">Los Angeles, CA 90034 &middot; Palms</div></div>
+      <span class="badge badge-ok">Available</span>
+    </div>
+    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">12</span></div><div class="m"><span class="k">Asking price</span><span class="v">$3,375,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$281,250</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$266.17</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.80%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">10.29x</span></div><div class="m"><span class="k">Year built</span><span class="v">1961</span></div><div class="m"><span class="k">Building SF</span><span class="v">12,680</span></div><div class="m"><span class="k">Lot SF</span><span class="v">12,632</span></div></div>
+    <p class="note">Two adjacent parcels; 10 of 12 are 3-bed</p>
+    <div class="meta">Listing broker: Raymond A. Rodriguez IV, Matt Freedman &middot; On market since 6/17/2026</div>
+    <p class="pend">Offering memorandum requested. LAAA underwriting and setup sheet to follow once it is received; figures above are the listing broker&#39;s as published.</p>
+  </div>
+</section>
+<section class="deal" id="deal-15" data-sub="West LA / Rancho Park" data-status="Available">
+  <div class="photo"><img src="../images/07.jpg" alt="11825 National Blvd" loading="lazy"></div>
+  <div class="body">
+    <div class="head">
+      <div><div class="num">#15</div><h2>11825 National Blvd</h2><div class="sub">Los Angeles, CA 90064 &middot; West LA / Rancho Park</div></div>
+      <span class="badge badge-ok">Available</span>
+    </div>
+    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">13</span></div><div class="m"><span class="k">Asking price</span><span class="v">$4,595,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$353,462</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$388.39</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.71%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">11.21x</span></div><div class="m"><span class="k">Year built</span><span class="v">1971</span></div><div class="m"><span class="k">Building SF</span><span class="v">11,831</span></div><div class="m"><span class="k">Lot SF</span><span class="v">10,019</span></div></div>
+    <p class="note">Reduced</p>
+    <div class="meta">Listing broker: Jonathan Taksa &middot; On market since 8/24/2026</div>
+    <p class="pend">Offering memorandum requested. LAAA underwriting and setup sheet to follow once it is received; figures above are the listing broker&#39;s as published.</p>
+  </div>
+</section>
+<section class="deal" id="deal-16" data-sub="Palms" data-status="Available">
+  <div class="photo"><img src="../images/09.jpg" alt="3602 Keystone Ave" loading="lazy"></div>
+  <div class="body">
+    <div class="head">
+      <div><div class="num">#16</div><h2>3602 Keystone Ave</h2><div class="sub">Los Angeles, CA 90034 &middot; Palms</div></div>
+      <span class="badge badge-ok">Available</span>
+    </div>
+    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">10</span></div><div class="m"><span class="k">Asking price</span><span class="v">$2,675,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$267,500</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$380.40</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.61%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">11.19x</span></div><div class="m"><span class="k">Year built</span><span class="v">1967</span></div><div class="m"><span class="k">Building SF</span><span class="v">7,032</span></div><div class="m"><span class="k">Lot SF</span><span class="v">7,405</span></div></div>
+    <p class="note">80% occupied</p>
+    <div class="meta">Listing broker: Peter James, Will James &middot; On market since 8/13/2026</div>
+    <p class="pend">Offering memorandum requested. LAAA underwriting and setup sheet to follow once it is received; figures above are the listing broker&#39;s as published.</p>
+  </div>
+</section>
+<section class="deal" id="deal-17" data-sub="Venice" data-status="Available">
+  <div class="photo"><img src="../images/15.jpg" alt="20 Brooks Ave" loading="lazy"></div>
+  <div class="body">
+    <div class="head">
+      <div><div class="num">#17</div><h2>20 Brooks Ave</h2><div class="sub">Venice, CA 90291 &middot; Venice</div></div>
+      <span class="badge badge-ok">Available</span>
+    </div>
+    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">18</span></div><div class="m"><span class="k">Asking price</span><span class="v">$5,600,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$311,111</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$482.09</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.48%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">9.12x</span></div><div class="m"><span class="k">Year built</span><span class="v">1909</span></div><div class="m"><span class="k">Building SF</span><span class="v">11,616</span></div><div class="m"><span class="k">Lot SF</span><span class="v">6,098</span></div></div>
+    <p class="note">GRM 9.12 published</p>
+    <div class="meta">Listing broker: Kitty Wallace &middot; On market since 8/27/2025</div>
+    <p class="pend">Offering memorandum requested. LAAA underwriting and setup sheet to follow once it is received; figures above are the listing broker&#39;s as published.</p>
+  </div>
+</section>
+<section class="deal" id="deal-18" data-sub="Culver City" data-status="Available">
+  <div class="photo"><img src="../images/16.jpg" alt="3827 Tilden Ave (The Tilden)" loading="lazy"></div>
+  <div class="body">
+    <div class="head">
+      <div><div class="num">#18</div><h2>3827 Tilden Ave (The Tilden)</h2><div class="sub">Culver City, CA 90232 &middot; Culver City</div></div>
+      <span class="badge badge-ok">Available</span>
+    </div>
+    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">10</span></div><div class="m"><span class="k">Asking price</span><span class="v">$3,450,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$345,000</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$369.38</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.42%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">-</span></div><div class="m"><span class="k">Year built</span><span class="v">1957</span></div><div class="m"><span class="k">Building SF</span><span class="v">9,340</span></div><div class="m"><span class="k">Lot SF</span><span class="v">10,890</span></div></div>
+    <p class="note">Part of a portfolio sale; GRM not published, rents estimated</p>
+    <div class="meta">Listing broker: Adam Peterson, Andrew Long &middot; On market since 2/9/2026</div>
+    <p class="pend">Offering memorandum requested. LAAA underwriting and setup sheet to follow once it is received; figures above are the listing broker&#39;s as published.</p>
+  </div>
+</section>
+<section class="deal" id="deal-19" data-sub="Mar Vista" data-status="Available">
+  <div class="photo"><img src="../images/18.jpg" alt="11401 Washington Pl" loading="lazy"></div>
+  <div class="body">
+    <div class="head">
+      <div><div class="num">#19</div><h2>11401 Washington Pl</h2><div class="sub">Los Angeles, CA 90066 &middot; Mar Vista</div></div>
+      <span class="badge badge-ok">Available</span>
+    </div>
+    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">10</span></div><div class="m"><span class="k">Asking price</span><span class="v">$2,795,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$279,500</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$392.06</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.30%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">12.30x</span></div><div class="m"><span class="k">Year built</span><span class="v">1954</span></div><div class="m"><span class="k">Building SF</span><span class="v">7,129</span></div><div class="m"><span class="k">Lot SF</span><span class="v">7,841</span></div></div>
+    
+    <div class="meta">Listing broker: Jonathan Nikfarjam, Allen Gholian &middot; On market since 6/24/2026</div>
+    <p class="pend">Offering memorandum requested. LAAA underwriting and setup sheet to follow once it is received; figures above are the listing broker&#39;s as published.</p>
+  </div>
+</section>
+<section class="deal" id="deal-20" data-sub="West Hollywood" data-status="Available">
+  <div class="photo"><img src="../images/19.jpg" alt="7526 Fountain Ave" loading="lazy"></div>
+  <div class="body">
+    <div class="head">
+      <div><div class="num">#20</div><h2>7526 Fountain Ave</h2><div class="sub">West Hollywood, CA 90046 &middot; West Hollywood</div></div>
+      <span class="badge badge-ok">Available</span>
+    </div>
+    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">10</span></div><div class="m"><span class="k">Asking price</span><span class="v">$2,400,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$240,000</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$309.80</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.29%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">11.44x</span></div><div class="m"><span class="k">Year built</span><span class="v">1955</span></div><div class="m"><span class="k">Building SF</span><span class="v">7,747</span></div><div class="m"><span class="k">Lot SF</span><span class="v">7,405</span></div></div>
+    
+    <div class="meta">Listing broker: Mike Hanassab, Steven Goldstein &middot; On market since 9/1/2026</div>
+    <p class="pend">Offering memorandum requested. LAAA underwriting and setup sheet to follow once it is received; figures above are the listing broker&#39;s as published.</p>
+  </div>
+</section>
+<section class="deal" id="deal-21" data-sub="Santa Monica" data-status="Available">
+  <div class="photo"><img src="../images/20.jpg" alt="1942 Euclid St" loading="lazy"></div>
+  <div class="body">
+    <div class="head">
+      <div><div class="num">#21</div><h2>1942 Euclid St</h2><div class="sub">Santa Monica, CA 90404 &middot; Santa Monica</div></div>
+      <span class="badge badge-ok">Available</span>
+    </div>
+    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">15</span></div><div class="m"><span class="k">Asking price</span><span class="v">$3,475,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$231,667</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$393.90</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.16%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">12.17x</span></div><div class="m"><span class="k">Year built</span><span class="v">1962</span></div><div class="m"><span class="k">Building SF</span><span class="v">8,822</span></div><div class="m"><span class="k">Lot SF</span><span class="v">7,405</span></div></div>
+    
+    <div class="meta">Listing broker: Kitty Wallace &middot; On market since 8/29/2025</div>
+    <p class="pend">Offering memorandum requested. LAAA underwriting and setup sheet to follow once it is received; figures above are the listing broker&#39;s as published.</p>
+  </div>
+</section>
+<section class="deal" id="deal-22" data-sub="Palms" data-status="Available">
+  <div class="photo"><img src="../images/21.jpg" alt="3575-3595 S Sepulveda Blvd" loading="lazy"></div>
+  <div class="body">
+    <div class="head">
+      <div><div class="num">#22</div><h2>3575-3595 S Sepulveda Blvd</h2><div class="sub">Los Angeles, CA 90034 &middot; Palms</div></div>
+      <span class="badge badge-ok">Available</span>
+    </div>
+    <div class="metrics"><div class="m"><span class="k">Units</span><span class="v">42</span></div><div class="m"><span class="k">Asking price</span><span class="v">$8,995,000</span></div><div class="m"><span class="k">Price / unit</span><span class="v">$214,167</span></div><div class="m"><span class="k">Price / SF</span><span class="v">$359.08</span></div><div class="m"><span class="k">Published cap</span><span class="v">5.09%</span></div><div class="m"><span class="k">Published GRM</span><span class="v">10.50x</span></div><div class="m"><span class="k">Year built</span><span class="v">1948</span></div><div class="m"><span class="k">Building SF</span><span class="v">25,050</span></div><div class="m"><span class="k">Lot SF</span><span class="v">29,185</span></div></div>
+    <p class="note">Two separate APNs, TOC Tier 2</p>
+    <div class="meta">Listing broker: Dannie Cavanaugh &middot; On market since 4/13/2026</div>
+    <p class="pend">Offering memorandum requested. LAAA underwriting and setup sheet to follow once it is received; figures above are the listing broker&#39;s as published.</p>
   </div>
 </section></main>
 <footer><div class="wrap">
@@ -466,7 +383,7 @@ footer{background:var(--navy2);color:#c9d3de;padding:28px 20px;font-size:13px} f
 </div></footer>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const D=[{"i": 1, "a": "1129 Lincoln Blvd", "p": "$3,100,000", "u": "10", "s": "Available", "lat": 34.0231351, "lon": -118.4951608, "sub": "Santa Monica"}, {"i": 2, "a": "2001 Penmar Ave", "p": "$5,095,000", "u": "14", "s": "Available", "lat": 34.000059, "lon": -118.455212, "sub": "Venice"}, {"i": 3, "a": "947-953 11th St (Voss Apartments)", "p": "$8,500,000", "u": "15", "s": "Available", "lat": 34.0279871, "lon": -118.4956011, "sub": "Santa Monica"}, {"i": 4, "a": "1811 Parnell Ave", "p": "$2,650,000", "u": "11", "s": "Available", "lat": 34.0527536, "lon": -118.4300762, "sub": "West LA / Sawtelle"}, {"i": 5, "a": "2619 S Sepulveda Blvd", "p": "$5,575,000", "u": "29", "s": "Available", "lat": 34.0326364, "lon": -118.4322963, "sub": "West LA / Rancho Park"}, {"i": 6, "a": "2015-2021 Chariton St", "p": "$3,375,000", "u": "12", "s": "Available", "lat": 34.0403489, "lon": -118.3781536, "sub": "Palms"}, {"i": 7, "a": "11825 National Blvd", "p": "$4,595,000", "u": "13", "s": "Available", "lat": 34.021868, "lon": -118.4404855, "sub": "West LA / Rancho Park"}, {"i": 8, "a": "1811 S Bentley Ave (Brazilia Apts)", "p": "$6,350,000", "u": "15", "s": "Available", "lat": 34.0461509, "lon": -118.4422627, "sub": "West LA / Sawtelle"}, {"i": 9, "a": "3602 Keystone Ave", "p": "$2,675,000", "u": "10", "s": "Available", "lat": 34.0236547, "lon": -118.409306, "sub": "Palms"}, {"i": 10, "a": "2626 Cloverfield Blvd", "p": "$4,750,000", "u": "12", "s": "Available", "lat": 34.0167793, "lon": -118.4616759, "sub": "Santa Monica"}, {"i": 11, "a": "440 Raymond Ave", "p": "$7,750,000", "u": "20", "s": "Available", "lat": 34.0024323, "lon": -118.4784838, "sub": "Santa Monica"}, {"i": 12, "a": "1429 Havenhurst Dr", "p": "$4,800,000", "u": "18", "s": "Available", "lat": 34.0968029, "lon": -118.3678418, "sub": "West Hollywood"}, {"i": 13, "a": "1524 Granville Ave", "p": "$5,250,000", "u": "10", "s": "Available", "lat": 34.042494, "lon": -118.4577192, "sub": "West LA / Sawtelle"}, {"i": 14, "a": "1041 S Corning St", "p": "$4,700,000", "u": "15", "s": "Under contract", "lat": 34.0584317, "lon": -118.3773811, "sub": "Pico-Robertson / Beverlywood"}, {"i": 15, "a": "20 Brooks Ave", "p": "$5,600,000", "u": "18", "s": "Available", "lat": 33.9909423, "lon": -118.4761872, "sub": "Venice"}, {"i": 16, "a": "3827 Tilden Ave (The Tilden)", "p": "$3,450,000", "u": "10", "s": "Available", "lat": 34.0136017, "lon": -118.4143958, "sub": "Culver City"}, {"i": 17, "a": "900 N Orange Grove Ave", "p": "$4,150,000", "u": "20", "s": "Available", "lat": 34.08733, "lon": -118.360414, "sub": "West Hollywood"}, {"i": 18, "a": "11401 Washington Pl", "p": "$2,795,000", "u": "10", "s": "Available", "lat": 34.006245, "lon": -118.418371, "sub": "Mar Vista"}, {"i": 19, "a": "7526 Fountain Ave", "p": "$2,400,000", "u": "10", "s": "Available", "lat": 34.0943176, "lon": -118.3537034, "sub": "West Hollywood"}, {"i": 20, "a": "1942 Euclid St", "p": "$3,475,000", "u": "15", "s": "Available", "lat": 34.0161115, "lon": -118.4783417, "sub": "Santa Monica"}, {"i": 21, "a": "3575-3595 S Sepulveda Blvd", "p": "$8,995,000", "u": "42", "s": "Available", "lat": 34.0171738, "lon": -118.420693, "sub": "Palms"}, {"i": 22, "a": "222-228 Idaho Ave", "p": "$7,795,000", "u": "20", "s": "Available", "lat": 34.0220989, "lon": -118.5042684, "sub": "Santa Monica"}, {"i": 23, "a": "120 Westminster Ave", "p": "$4,300,000", "u": "21", "s": "Available", "lat": 33.9896348, "lon": -118.4730895, "sub": "Venice"}, {"i": 24, "a": "7550 Fountain Ave", "p": "$3,795,000", "u": "10", "s": "Available", "lat": 34.0943217, "lon": -118.3542902, "sub": "West Hollywood"}];
+const D=[{"i": 1, "a": "2001 Penmar Ave", "p": "$5,095,000", "u": "14", "s": "Available", "lat": 34.000059, "lon": -118.455212, "sub": "Venice"}, {"i": 2, "a": "1811 S Bentley Ave (Brazilia Apts)", "p": "$6,350,000", "u": "15", "s": "Available", "lat": 34.0461509, "lon": -118.4422627, "sub": "West LA / Sawtelle"}, {"i": 3, "a": "2626 Cloverfield Blvd", "p": "$4,750,000", "u": "12", "s": "Available", "lat": 34.0167793, "lon": -118.4616759, "sub": "Santa Monica"}, {"i": 4, "a": "440 Raymond Ave", "p": "$7,750,000", "u": "20", "s": "Available", "lat": 34.0024323, "lon": -118.4784838, "sub": "Santa Monica"}, {"i": 5, "a": "1429 Havenhurst Dr", "p": "$4,800,000", "u": "18", "s": "Available", "lat": 34.0968029, "lon": -118.3678418, "sub": "West Hollywood"}, {"i": 6, "a": "1524 Granville Ave", "p": "$5,250,000", "u": "10", "s": "Available", "lat": 34.042494, "lon": -118.4577192, "sub": "West LA / Sawtelle"}, {"i": 7, "a": "1041 S Corning St", "p": "$4,700,000", "u": "15", "s": "Under contract", "lat": 34.0584317, "lon": -118.3773811, "sub": "Pico-Robertson / Beverlywood"}, {"i": 8, "a": "900 N Orange Grove Ave", "p": "$4,150,000", "u": "20", "s": "Available", "lat": 34.08733, "lon": -118.360414, "sub": "West Hollywood"}, {"i": 9, "a": "222-228 Idaho Ave", "p": "$7,795,000", "u": "20", "s": "Available", "lat": 34.0220989, "lon": -118.5042684, "sub": "Santa Monica"}, {"i": 10, "a": "1129 Lincoln Blvd", "p": "$3,100,000", "u": "10", "s": "Available", "lat": 34.0231351, "lon": -118.4951608, "sub": "Santa Monica"}, {"i": 11, "a": "947-953 11th St (Voss Apartments)", "p": "$8,500,000", "u": "15", "s": "Available", "lat": 34.0279871, "lon": -118.4956011, "sub": "Santa Monica"}, {"i": 12, "a": "1811 Parnell Ave", "p": "$2,650,000", "u": "11", "s": "Available", "lat": 34.0527536, "lon": -118.4300762, "sub": "West LA / Sawtelle"}, {"i": 13, "a": "2619 S Sepulveda Blvd", "p": "$5,575,000", "u": "29", "s": "Available", "lat": 34.0326364, "lon": -118.4322963, "sub": "West LA / Rancho Park"}, {"i": 14, "a": "2015-2021 Chariton St", "p": "$3,375,000", "u": "12", "s": "Available", "lat": 34.0403489, "lon": -118.3781536, "sub": "Palms"}, {"i": 15, "a": "11825 National Blvd", "p": "$4,595,000", "u": "13", "s": "Available", "lat": 34.021868, "lon": -118.4404855, "sub": "West LA / Rancho Park"}, {"i": 16, "a": "3602 Keystone Ave", "p": "$2,675,000", "u": "10", "s": "Available", "lat": 34.0236547, "lon": -118.409306, "sub": "Palms"}, {"i": 17, "a": "20 Brooks Ave", "p": "$5,600,000", "u": "18", "s": "Available", "lat": 33.9909423, "lon": -118.4761872, "sub": "Venice"}, {"i": 18, "a": "3827 Tilden Ave (The Tilden)", "p": "$3,450,000", "u": "10", "s": "Available", "lat": 34.0136017, "lon": -118.4143958, "sub": "Culver City"}, {"i": 19, "a": "11401 Washington Pl", "p": "$2,795,000", "u": "10", "s": "Available", "lat": 34.006245, "lon": -118.418371, "sub": "Mar Vista"}, {"i": 20, "a": "7526 Fountain Ave", "p": "$2,400,000", "u": "10", "s": "Available", "lat": 34.0943176, "lon": -118.3537034, "sub": "West Hollywood"}, {"i": 21, "a": "1942 Euclid St", "p": "$3,475,000", "u": "15", "s": "Available", "lat": 34.0161115, "lon": -118.4783417, "sub": "Santa Monica"}, {"i": 22, "a": "3575-3595 S Sepulveda Blvd", "p": "$8,995,000", "u": "42", "s": "Available", "lat": 34.0171738, "lon": -118.420693, "sub": "Palms"}];
 const map=L.map('map',{scrollWheelZoom:false}).setView([34.04,-118.44],12);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 const col={'Available':'#1e7f4f','Under contract':'#b23a2f','Unpriced':'#7a7a7a'};
@@ -477,7 +394,8 @@ D.forEach(d=>{ if(d.lat==null)return; const m=L.circleMarker([d.lat,d.lon],{radi
   mk[d.i]=m; });
 function go(i){ const el=document.getElementById('deal-'+i); if(!el)return; el.scrollIntoView({behavior:'smooth',block:'start'}); el.classList.add('flash'); setTimeout(()=>el.classList.remove('flash'),2500); }
 const fs=document.getElementById('fsub'),ft=document.getElementById('fstat');
-function filt(){ let n=0; document.querySelectorAll('.deal').forEach(el=>{ const ok=(!fs.value||el.dataset.sub===fs.value)&&(!ft.value||el.dataset.status===ft.value); el.classList.toggle('hide',!ok); if(ok)n++; const i=+el.id.split('-')[1]; if(mk[i]){ ok?mk[i].addTo(map):map.removeLayer(mk[i]); } }); document.getElementById('count').textContent=n+' of 24 listings shown'; }
+function filt(){ let n=0; document.querySelectorAll('.deal').forEach(el=>{ const ok=(!fs.value||el.dataset.sub===fs.value)&&(!ft.value||el.dataset.status===ft.value); el.classList.toggle('hide',!ok); if(ok)n++; const i=+el.id.split('-')[1]; if(mk[i]){ ok?mk[i].addTo(map):map.removeLayer(mk[i]); } }); document.getElementById('count').textContent=n+' of 22 listings shown';
+  document.querySelectorAll('.sec').forEach(h=>{ let any=false, el=h.nextElementSibling; while(el&&!el.classList.contains('sec')){ if(!el.classList.contains('hide'))any=true; el=el.nextElementSibling; } h.classList.toggle('hide',!any); }); }
 fs.onchange=ft.onchange=filt; filt();
 </script>
 </body>
