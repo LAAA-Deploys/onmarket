@@ -170,7 +170,7 @@ document.getElementById('deals').innerHTML = D.map(d => {
   <p class="why">${esc(d.why)}</p>
   <div class="cols">
     <div><h4>What to know</h4><ul>${d.flags.map(f => `<li>${esc(f)}</li>`).join('')}</ul></div>
-    <div class="bk"><h4>Listing</h4><p>${esc(d.firm)}</p><p class="ask">Questions, tours or an offer: Filip Niculete, (818) 577-9893</p></div>
+    <div class="bk"><h4>Listing</h4><p>${esc(d.firm)}</p></div>
   </div>
   <div class="acts">
     <a class="btn" href="${esc(d.setup.pdf)}" target="_blank" rel="noopener">LAAA setup <small>PDF</small></a>
