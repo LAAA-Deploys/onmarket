@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>South Valley 5 to 7 Units | LAAA On-Market</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE work: a broker's deal review for a buyer, newspaper-graphics calm
+   IDEA the ranked deal sheet a broker hands across the table, with each package clipped behind it
+   PICTURE dumbbell rows: year-1 cap today against cap once rents reach market, ranked
+   COLOUR white ground, deep navy band, blue for today's cap, grey ring for market
+   TYPE Hanken Grotesk throughout, weights for contrast
+   LAYOUT navy band with finding and figures; chart full width; table; one card per deal; phone stacks */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0e1622);--ink:light-dark(#121a26,#e8edf4);--mut:light-dark(#5b6676,#9aa7b8);--line:light-dark(#e3e7ec,#253246);--band:light-dark(#1B3A5C,#122a45);--acc:light-dark(#1B3A5C,#8fb4e0);--gold:#C5A258;--mk:light-dark(#9aa5b4,#7f8da0);--card:light-dark(#f6f8fb,#142033);--warn:light-dark(#a3471a,#f0a37a)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Hanken Grotesk",system-ui,sans-serif;overflow-x:clip}
+a{color:var(--acc)}
+.band{padding:clamp(28px,4vw,56px) max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.top{background:var(--band);color:#fff}
+.top h1{font-size:clamp(30px,4.2vw,46px);line-height:1.05;letter-spacing:-.02em;margin:0 0 12px;text-wrap:balance;max-width:22ch}
+.top p{margin:0;max-width:70ch;color:#c9d6e8}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(15em,1fr));gap:18px 28px;margin-top:28px}
+.figs b{display:block;font-size:clamp(24px,2.6vw,30px);font-weight:600;white-space:nowrap}
+.figs span{color:#c9d6e8;font-size:14px}
+.files{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:500 14px/1.2 inherit;text-decoration:none;cursor:pointer}
+.btn:hover{border-color:var(--acc)}
+.btn:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.top .btn{background:transparent;color:#fff;border-color:#5d7598}
+.top .btn:hover{border-color:#fff}
+.btn small{color:var(--mut);font-weight:400}
+.top .btn small{color:#a9bad2}
+h2{font-size:28px;line-height:1.1;letter-spacing:-.01em;margin:0 0 6px}
+.lede{color:var(--mut);margin:0 0 22px;max-width:75ch}
+.chart{border-top:1px solid var(--line)}
+.crow{display:grid;grid-template-columns:2em minmax(9em,15em) minmax(0,1fr) 9.5em;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
+.crow .rk{color:var(--mut);font-variant-numeric:tabular-nums}
+.crow .nm{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track{position:relative;height:22px}
+.track::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px dashed var(--line)}
+.seg{position:absolute;top:50%;height:4px;margin-top:-2px;background:color-mix(in srgb,var(--acc) 22%,transparent);border-radius:2px}
+.dot,.ring{position:absolute;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%}
+.dot{background:var(--gold);box-shadow:0 0 0 2px var(--bg)}
+.ring{border:2.5px solid var(--mk);background:var(--bg)}
+.crow .vals{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.crow .vals b{color:var(--acc)}
+.crow .vals span{color:var(--mut)}
+.axis{display:grid;grid-template-columns:2em minmax(9em,15em) minmax(0,1fr) 9.5em;gap:12px;color:var(--mut);font-size:13px;padding-top:6px}
+.ticks{position:relative;height:18px}
+.ticks span{position:absolute;transform:translateX(-50%)}
+.key{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--mut);margin-bottom:10px}
+.key i{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-1px;margin-right:6px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{padding:9px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th{font-weight:600;color:var(--mut);font-size:13px;vertical-align:bottom}
+th:nth-child(2),td:nth-child(2){text-align:left}
+td:nth-child(2) a{font-weight:600;text-decoration:none}
+tbody tr:hover{background:var(--card)}
+.deals{display:grid;gap:18px}
+.deal{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:clamp(16px,2.4vw,26px);scroll-margin-top:16px}
+.dh{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.dh .n{font-size:15px;color:var(--mut);font-variant-numeric:tabular-nums}
+.dh h3{font-size:24px;line-height:1.15;margin:0}
+.dh .c{color:var(--mut)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5em,1fr));gap:10px 16px;margin:16px 0}
+.stats div{border-left:2px solid var(--line);padding-left:10px}
+.stats b{display:block;font-size:19px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.stats span{font-size:13px;color:var(--mut)}
+.stats .hl{border-color:var(--acc)}
+.stats .hl b{color:var(--acc)}
+.why{font-size:17px;margin:0 0 12px;max-width:80ch}
+.cols{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:24px;margin-top:6px}
+.cols h4{font-size:14px;margin:0 0 6px;color:var(--mut);font-weight:600}
+.cols ul{margin:0;padding-left:18px}
+.cols li{margin-bottom:6px}
+.bk p{margin:0 0 4px}
+.bk .ask{color:var(--mut);font-size:14.5px;margin-top:8px}
+.acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.none{color:var(--warn);font-size:14.5px;align-self:center}
+.foot{color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
+#toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s}
+#toast.on{opacity:1}
+@media(prefers-reduced-motion:reduce){#toast{transition:none}}
+@media(max-width:760px){.cols{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){
+ .crow,.axis{grid-template-columns:1.4em minmax(0,1fr) 7.6em}
+ .crow .track,.axis .ticks{grid-column:1/-1;grid-row:2}
+ .axis .ticks{grid-row:1}.axis>span{display:none}
+ table{font-size:13px}th,td{padding:7px 5px}
+}
+</style>
+</head>
+<body>
+<header class="top band"><div class="wrap">
+<h1>Burbank and Calvert lead the 12 South Valley listings of 5 to 7 units</h1>
+<p>The LAAA Team of Marcus & Millichap, 11/25/2026. Twelve on-market 5 to 7 unit buildings in the South Valley, all underwritten the same way: year 1 at the asking price on each seller's own expense lines, taxes reassessed at the price and 4% management. Ranked by our view of income, upside and basis.</p>
+<div class="figs" id="figs"></div>
+<div class="files"><a class="btn" href="#contact">Talk to Filip about any of these</a></div>
+</div></header>
+
+<section class="band"><div class="wrap">
+<h2>Year-1 cap today, and once rents reach market</h2>
+<p class="lede">Every building is on LA's RSO list, so the market figure only arrives as tenants move out. A long bar means more upside; a dot further right means more income on day one.</p>
+<div class="key"><span><i style="background:var(--acc)"></i>Year-1 cap (in-place rents)</span><span><i style="border:2.5px solid var(--mk)"></i>Cap at market rents</span></div>
+<div class="chart" id="chart"></div>
+<div class="axis"><span></span><span></span><div class="ticks" id="ticks"></div><span></span></div>
+</div></section>
+
+<section class="band" style="padding-top:0"><div class="wrap">
+<h2>All 12 at a glance</h2>
+<p class="lede">Click a property for its notes and setup.</p>
+<div class="scroll"><table><thead><tr><th>#</th><th>Property</th><th>Units</th><th>Asking</th><th>Per unit</th><th>Year-1 cap</th><th>Broker cap</th><th>At market</th><th>Upside</th><th>GRM</th><th>Cash-on-cash</th><th>Days on market</th></tr></thead><tbody id="tbl"></tbody></table></div>
+</div></section>
+
+<section class="band" style="padding-top:0"><div class="wrap">
+<h2>Deal by deal</h2>
+<p class="lede">Each setup is a one-page buyer underwriting on our expense basis; the Excel version keeps the formulas, so you can change the price or any line.</p>
+<div class="deals" id="deals"></div>
+</div></section>
+
+<section class="band" id="contact" style="padding-top:0"><div class="wrap deal"><h2>Filip Niculete</h2><p class="lede" style="margin:0">Senior Managing Director Investments, LAAA Team of Marcus & Millichap<br>(818) 577-9893 · <a href="mailto:Filip.Niculete@marcusmillichap.com">Filip.Niculete@marcusmillichap.com</a> · CA DRE 01905352 · <a href="https://www.laaa.com">www.laaa.com</a></p></div></section>
+<footer class="band foot"><div class="wrap">
+Figures are our estimates from the brokers' marketing documents, CoStar, TheMLS, the LA County assessor and the LAHD RSO list. Financing is illustrative (6.85%, 30-year amortization, 1.25x coverage, 65% maximum loan-to-value). Information comes from the listing brokers and public sources and has not been verified; buyers should confirm rents, expenses and unit counts in their own due diligence. Marcus & Millichap Real Estate Investment Services, Inc., CA DRE 00530854.
+</div></footer>
+<script id="data" type="application/json">[{"rank": 1, "addr": "13837 Burbank Blvd", "city": "Van Nuys, CA 91401", "units": 7, "price": 1499000, "ppu": 214142.85714285713, "psf": 211.2457722660654, "rent": 12907, "upside": 0.2605562872859688, "noi": 90126.48000000001, "cap": 0.0601244029352902, "bcap": 0.0608, "grm": 9.678210790010588, "mcap": 0.08519399599733155, "ltv": 0.6104069379586391, "coc": 0.029974390751879406, "p55": 1610000, "dom": 1, "yb": 1964, "why": "Highest income on current rents of the group, 6.01%, with larger 2-bedroom, 2-bath units. Soft-story retrofit and separate meters are stated in the listing.", "flags": ["Marketed with a two-page setup sheet; the full rent roll and operating statement are requested.", "Utilities and trash are shown at $17,951 a year ($2,564 a unit). If the bills come in lower, the cap goes up.", "Soft-story retrofit and separate gas and electric meters to be confirmed with LADBS."], "firm": "Compass (Kenny Stevens Team)", "setup": {"pdf": "files/13837-burbank-blvd-setup.pdf", "xlsx": "files/13837-burbank-blvd-setup.xlsx"}}, {"rank": 2, "addr": "11415 Calvert St", "city": "North Hollywood, CA 91606", "units": 7, "price": 1125000, "ppu": 160714.2857142857, "psf": 190.7102898796406, "rent": 9585, "upside": 0.585811163275952, "noi": 61871.399999999994, "cap": 0.05499679999999999, "bcap": 0.0559, "grm": 9.780907668231611, "mcap": 0.11076888888888889, "ltv": 0.5555555555555556, "coc": 0.024622895283041044, "p55": 1120000, "dom": 1, "yb": 1964, "why": "Lowest basis of the group at $160,714 a unit and $191/SF, with 59% rent upside: 5.50% today, about 11% once rents reach market.", "flags": ["The building is RSO, so the upside arrives as units turn over.", "Utilities and trash are shown at $15,312 a year with no breakdown; bills requested.", "One 2-bedroom is shown as available on CoStar while the rent roll shows all 7 leased; occupancy to be confirmed."], "firm": "Compass (Kenny Stevens Team)", "setup": {"pdf": "files/11415-calvert-st-setup.pdf", "xlsx": "files/11415-calvert-st-setup.xlsx"}}, {"rank": 3, "addr": "6206 Beck Ave", "city": "North Hollywood, CA 91606", "units": 6, "price": 1275000, "ppu": 212500, "psf": 269.6700507614213, "rent": 9918, "upside": 0.2704174228675136, "noi": 76105.52, "cap": 0.05969060392156863, "bcap": 0.063, "grm": 10.712845331720105, "mcap": 0.08319607843137256, "ltv": 0.6039215686274509, "coc": 0.029686751609420883, "p55": 1360000, "dom": 19, "yb": 1955, "why": "Two vacant units can be leased at market from day one: 5.97% once leased.", "flags": ["We count the vacant units at $1,800 (1-bedroom) and $2,250 (2-bedroom).", "Repairs in the marketing package are $1,212 a year ($202 a unit); budget more.", "Last sold 05/2026 for $1,005,000; ask for the scope of the work done since."], "firm": "Lifetime Realty & Investment", "setup": {"pdf": "files/6206-beck-ave-setup.pdf", "xlsx": "files/6206-beck-ave-setup.xlsx"}}, {"rank": 4, "addr": "5328 Auckland Ave", "city": "North Hollywood, CA 91601", "units": 7, "price": 1400000, "ppu": 200000, "psf": 421.9409282700422, "rent": 10506.79, "upside": 0.19446567410217575, "noi": 85647.0356, "cap": 0.061176454000000005, "bcap": 0.053, "grm": 11.103930569342936, "mcap": 0.07748428571428571, "ltv": 0.6214285714285714, "coc": 0.03128488879708751, "p55": 1525000, "dom": 64, "yb": 1950, "why": "Highest year-1 cap of the group, 6.12%, with modest rent upside (19%). Same ownership as 5327 Auckland across the street, 14 units together.", "flags": ["A $6,611 telephone line in the operating statement is left out as an owner item; if it is a real building cost, the cap is about 5.65%.", "Insurance ($4,645) and utilities ($4,272) look low for 7 units; policy and bills requested.", "The assessor shows built 1950 and 3,318 SF of building."], "firm": "Centennial Advisers", "setup": {"pdf": "files/5328-auckland-ave-setup.pdf", "xlsx": "files/5328-auckland-ave-setup.xlsx"}}, {"rank": 5, "addr": "5327 Auckland Ave", "city": "North Hollywood, CA 91601", "units": 7, "price": 1500000, "ppu": 214285.7142857143, "psf": 286.0957467098989, "rent": 11209.279999999999, "upside": 0.4050857860629766, "noi": 81242.01919999998, "cap": 0.05416134613333332, "bcap": 0.04940000000000001, "grm": 11.151474492563306, "mcap": 0.087988, "ltv": 0.55, "coc": 0.023471479683493637, "p55": 1480000, "dom": 64, "yb": 1963, "why": "5.42% with one vacant unit counted at market and 41% rent upside. Can be bought together with 5328 Auckland.", "flags": ["Unit 4 is vacant; we count it at $2,350 a month.", "Cost-recovery and SCEP pass-throughs ($3,056 a year) are left out of income because they expire.", "No trash cost is shown; a typical bill would be about $2,800 a year."], "firm": "Centennial Advisers", "setup": {"pdf": "files/5327-auckland-ave-setup.pdf", "xlsx": "files/5327-auckland-ave-setup.xlsx"}}, {"rank": 6, "addr": "13534 Victory Blvd", "city": "Van Nuys, CA 91401", "units": 5, "price": 1025000, "ppu": 205000, "psf": 205.08203281312524, "rent": 7872, "upside": 0.39735772357723587, "noi": 53878.08, "cap": 0.05256398048780488, "bcap": 0.0527, "grm": 10.850694444444445, "mcap": 0.08666439024390243, "ltv": 0.5317073170731708, "coc": 0.022254105369661062, "p55": 985000, "dom": 20, "yb": 1948, "why": "Smallest check of the group at $1,025,000, with a new pitched roof in 2025 and 40% rent upside: 5.26% today.", "flags": ["Long-held building with long-term tenants, so the upside arrives slowly under RSO.", "Unit sizes add to 4,850 SF against 4,998 SF stated.", "Soft-story status to be confirmed with LADBS."], "firm": "Marcus & Millichap (Encino)", "setup": {"pdf": "files/13534-victory-blvd-setup.pdf", "xlsx": "files/13534-victory-blvd-setup.xlsx"}}, {"rank": 7, "addr": "6264 Willowcrest Ave", "city": "North Hollywood, CA 91606", "units": 6, "price": 1325000, "ppu": 220833.33333333334, "psf": 272.74598600247015, "rent": 9966, "upside": 0.2918924342765403, "noi": 69727.24, "cap": 0.0526243320754717, "bcap": 0.0585, "grm": 11.079336410462238, "mcap": 0.07715698113207548, "ltv": 0.5320754716981132, "coc": 0.02233609775557388, "p55": 1275000, "dom": 111, "yb": 1956, "why": "5.26% with the seismic retrofit reported done and an 8,580 SF lot with ADU potential.", "flags": ["We add 4% management, which the operating statement leaves out.", "Seismic recapture from 4 tenants ($1,824 a year) is left out of income because it is time-limited.", "One unit is a subsidized tenancy."], "firm": "KW Commercial (Pasadena)", "setup": {"pdf": "files/6264-willowcrest-ave-setup.pdf", "xlsx": "files/6264-willowcrest-ave-setup.xlsx"}}, {"rank": 8, "addr": "13227 Oxnard St", "city": "Van Nuys, CA 91401", "units": 6, "price": 1295000, "ppu": 215833.33333333334, "psf": 249.8070987654321, "rent": 8810.62, "upside": 0.4981919547092031, "noi": 67711.6168, "cap": 0.052286962779922785, "bcap": 0.0519, "grm": 12.248475892351124, "mcap": 0.09016216216216216, "ltv": 0.528957528957529, "coc": 0.022003113100633673, "p55": 1240000, "dom": 88, "yb": 1953, "why": "5.23% with 50% rent upside on six 2-bedroom units. A dated rent roll and operating statement would firm up the numbers.", "flags": ["We use the CoStar price of $1,295,000; the setup spreadsheet shows $1,299,000.", "Insurance and utilities are each shown as $6,000 a year with no trash line; policy and bills requested.", "Pro forma laundry income is read as $200 a month."], "firm": "KW Commercial (Calabasas)", "setup": {"pdf": "files/13227-oxnard-st-setup.pdf", "xlsx": "files/13227-oxnard-st-setup.xlsx"}}, {"rank": 9, "addr": "12036 Magnolia Blvd", "city": "Valley Village, CA 91607", "units": 6, "price": 1249000, "ppu": 208166.66666666666, "psf": 465.17690875232773, "rent": 8842, "upside": 0.11965618638317133, "noi": 65950.88, "cap": 0.05280294635708567, "bcap": 0.05019999999999999, "grm": 11.77146950162105, "mcap": 0.06226901521216974, "ltv": 0.5364291433146517, "coc": 0.022197193149774096, "p55": 1205000, "dom": 159, "yb": 1950, "why": "5.28% at the reduced price of $1,249,000, with updated units and 12% rent upside.", "flags": ["The setup sheet shows six studios of about 445 SF; unit types to be confirmed.", "A $200 a month garage rent is carried as other income.", "New roof and updated electrical stated in the listing."], "firm": "KW Commercial (Calabasas)", "setup": {"pdf": "files/12036-magnolia-blvd-setup.pdf", "xlsx": "files/12036-magnolia-blvd-setup.xlsx"}}, {"rank": 10, "addr": "6254 Whitsett Ave", "city": "North Hollywood", "units": 6, "price": 1420000, "ppu": 236666.66666666666, "psf": 279.0880503144654, "rent": 10028.75, "upside": 0.1766172254767544, "noi": 68183.65, "cap": 0.04801665492957746, "bcap": 0.0556, "grm": 11.799410029498524, "mcap": 0.06195492957746479, "ltv": 0.4859154929577465, "coc": 0.018538782291177572, "p55": 1270000, "dom": 39, "yb": 1956, "why": "4.80% at $236,667 a unit, the highest price per unit of the group; 6.20% once rents reach market.", "flags": ["Offered directly by the owner.", "Laundry and parking income is supported at $320 a year.", "Units 3 and 6 are the 2-bedrooms."], "firm": "Offered by the owner", "setup": {"pdf": "files/6254-whitsett-ave-setup.pdf", "xlsx": "files/6254-whitsett-ave-setup.xlsx"}}, {"rank": 11, "addr": "6651 Beck Ave", "city": "North Hollywood, CA 91606", "units": 6, "price": 1510000, "ppu": 251666.66666666666, "psf": 249.50429610046265, "rent": 8552, "upside": 0.5668849391955098, "noi": 55422.28, "cap": 0.03670349668874172, "bcap": 0.04849999999999999, "grm": 14.713907078266292, "mcap": 0.07258013245033113, "ltv": 0.3708609271523179, "coc": 0.0117091048820048, "p55": 1095000, "dom": 132, "yb": 1961, "why": "3.67% at the current asking price of $1,510,000, with 57% rent upside as units turn over.", "flags": ["No offering memorandum; the MLS gives a rent roll and a $29,610 expense total, and we reassess taxes at the price.", "2-bedroom rents run $1,292 to $1,611 a month.", "On the market since 2025; first asked $1,850,000."], "firm": "Four Brothers Real Estate", "setup": {"pdf": "files/6651-beck-ave-setup.pdf", "xlsx": "files/6651-beck-ave-setup.xlsx"}}, {"rank": 12, "addr": "11234 Hatteras St", "city": "North Hollywood, CA 91601", "units": 5, "price": 1250000, "ppu": 250000, "psf": 321.0891343436938, "rent": 7184, "upside": 0.6842984409799555, "noi": 46447.759999999995, "cap": 0.037158208, "bcap": 0.0367, "grm": 14.49981440237565, "mcap": 0.0811048, "ltv": 0.376, "coc": 0.011882491852976807, "p55": 915000, "dom": 155, "yb": 1924, "why": "3.72% on current rents; the value is the 13,077 SF LARD1.5 lot and its ADU potential.", "flags": ["County records show four units against five marketed; the legal unit count is the first thing to confirm.", "The marketing package's 7.24% cap assumes five ADUs are built; construction cost is not shown.", "Built 1924."], "firm": "Lyon Stahl Investment Real Estate", "setup": {"pdf": "files/11234-hatteras-st-setup.pdf", "xlsx": "files/11234-hatteras-st-setup.xlsx"}}]</script>
+<script>
+{
+const D = JSON.parse(document.getElementById('data').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const usd = v => '$' + Math.round(v).toLocaleString('en-US');
+const pct = (v, d = 2) => (v * 100).toFixed(d) + '%';
+const id = d => 'deal-' + d.addr.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+const LO = 0.03, HI = 0.12, X = v => ((Math.min(Math.max(v, LO), HI) - LO) / (HI - LO) * 100).toFixed(2) + '%';
+
+const caps = D.map(d => d.cap), prices = D.map(d => d.price);
+document.getElementById('figs').innerHTML = [
+  [D.length, 'listings, all on the RSO list'],
+  [pct(Math.min(...caps)) + ' to ' + pct(Math.max(...caps)), 'year-1 cap range'],
+  ['$' + (Math.min(...prices) / 1e6).toFixed(3).replace(/0$/, '') + 'M to $' + (Math.max(...prices) / 1e6).toFixed(2) + 'M', 'asking prices'],
+  [D.length ? '$' + Math.round(Math.min(...D.map(d => d.ppu)) / 1000) + 'K to $' + Math.round(Math.max(...D.map(d => d.ppu)) / 1000) + 'K' : '', 'price per unit'],
+].map(([b, s]) => `<div><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join('');
+
+document.getElementById('chart').innerHTML = D.map(d => `<div class="crow">
+  <span class="rk">${d.rank}</span><a class="nm" href="#${id(d)}">${esc(d.addr)}</a>
+  <div class="track" title="${esc(d.addr)}: ${pct(d.cap)} today, ${pct(d.mcap)} at market"><div class="seg" style="left:${X(d.cap)};width:calc(${X(d.mcap)} - ${X(d.cap)})"></div><div class="ring" style="left:${X(d.mcap)}"></div><div class="dot" style="left:${X(d.cap)}"></div></div>
+  <span class="vals"><b>${pct(d.cap)}</b> <span>to ${pct(d.mcap, 1)}</span></span></div>`).join('');
+document.getElementById('ticks').innerHTML = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(t => `<span style="left:${X(t / 100)}">${t}%</span>`).join('');
+
+document.getElementById('tbl').innerHTML = D.map(d => `<tr><td>${d.rank}</td><td><a href="#${id(d)}">${esc(d.addr)}</a></td><td>${d.units}</td><td>${usd(d.price)}</td><td>${usd(d.ppu)}</td><td><b>${pct(d.cap)}</b></td><td>${d.bcap ? pct(d.bcap) : ''}</td><td>${pct(d.mcap)}</td><td>${pct(d.upside, 0)}</td><td>${d.grm.toFixed(2)}</td><td>${pct(d.coc, 1)}</td><td>${d.dom}</td></tr>`).join('');
+
+document.getElementById('deals').innerHTML = D.map(d => {
+  return `<article class="deal" id="${id(d)}">
+  <div class="dh"><span class="n">#${d.rank}</span><h3>${esc(d.addr)}</h3><span class="c">${esc(d.city)} · ${d.units} units · built ${esc(d.yb)}</span></div>
+  <div class="stats">
+    <div><b>${usd(d.price)}</b><span>asking</span></div>
+    <div><b>${usd(d.ppu)}</b><span>per unit · $${Math.round(d.psf)}/SF</span></div>
+    <div class="hl"><b>${pct(d.cap)}</b><span>year-1 cap (broker ${d.bcap ? pct(d.bcap) : 'none'})</span></div>
+    <div><b>${usd(d.noi)}</b><span>year-1 NOI</span></div>
+    <div><b>${pct(d.mcap)}</b><span>cap at market (${pct(d.upside, 0)} upside)</span></div>
+    <div><b>${pct(d.coc, 1)}</b><span>cash-on-cash at ${pct(d.ltv, 0)} LTV</span></div>
+    <div><b>${usd(d.p55)}</b><span>price for a 5.5% cap</span></div>
+    <div><b>${d.dom}</b><span>days on market</span></div>
+  </div>
+  <p class="why">${esc(d.why)}</p>
+  <div class="cols">
+    <div><h4>What to know</h4><ul>${d.flags.map(f => `<li>${esc(f)}</li>`).join('')}</ul></div>
+    <div class="bk"><h4>Listing</h4><p>${esc(d.firm)}</p><p class="ask">Questions, tours or an offer: Filip Niculete, (818) 577-9893</p></div>
+  </div>
+  <div class="acts">
+    <a class="btn" href="${esc(d.setup.pdf)}" target="_blank" rel="noopener">LAAA setup <small>PDF</small></a>
+    <a class="btn" href="${esc(d.setup.xlsx)}" download="${esc(d.addr)} - LAAA Setup.xlsx">LAAA setup <small>Excel</small></a>
+  </div></article>`;
+}).join('');
+
+}
+</script>
+</body>
+</html>
